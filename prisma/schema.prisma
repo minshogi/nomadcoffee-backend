@@ -10,8 +10,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model coffee {
-  id   Int     @id @default(autoincrement())
-  name String
-  milk Boolean
+model user {
+  id             Int     @id @default(autoincrement())
+  username       String  @unique
+  email          String  @unique
+  name           String
+  location       String
+  password       String
+  avatarURL      String?
+  githubUsername String?
 }
